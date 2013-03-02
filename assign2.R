@@ -5,5 +5,8 @@ rm(list=ls())
 setwd("/home/steveo/coursera/data_analysis/data_analysis_2")
 # 3.Download Data
 fileUrl <- "https://spark-public.s3.amazonaws.com/dataanalysis/samsungData.rda"
-download.file(file.url,file.local,mode="wb")
-
+fileLocal <- "./samsungData.rda"
+download.file(fileUrl,fileLocal,method="curl")
+# 4.Load Data to R
+dateDownloaded <- date()
+load(fileLocal)
