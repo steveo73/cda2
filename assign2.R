@@ -30,4 +30,10 @@ testData <- samsungData [samsungData$subject %in% c(27:30),]
 # (ii) prediction function
 trainData1 <- trainData [trainData$subject < 6,]
 trainData2 <- trainData [trainData$subject > 5,]
+# 8. Create a tree function to determine significant features
+library(tree)
+treetd1 <- tree(factor(activity) ~ .,data=trainData1)
+summary(treetd1)
+plot(treetd1)
+text(treetd1)
 
